@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Belajar DOM | Najlala</title>
+
+  <!-- Informasi preview link -->
+  <meta property="og:title" content="Belajar DOM | Najlala">
+  <meta property="og:description" content="Website latihan pemrograman DOM milik Najlala.">
+  <meta property="og:url" content="https://najlafadila1-eng.github.io/belajar-dom/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://github.com/najlafadila1-eng.png">
+
+  <meta name="description" content="Website latihan pemrograman DOM milik Najlala.">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="github-mark">●</div>
+    <button class="menu-button" onclick="showMessage('Menu navigasi')">☰</button>
+
+    <div class="top-title">
+      <strong>GitHub</strong>
+      <span>/</span>
+      <a href="#" onclick="showMessage('Repository milik Najlala'); return false;">Najlala</a>
+      <span>/</span>
+      <strong>belajar-dom</strong>
+    </div>
+
+    <div class="top-actions">
+      <button onclick="showMessage('Kolom pencarian')">⌕ Search</button>
+      <button onclick="showMessage('Menu tambah')">＋</button>
+      <button onclick="showMessage('Notifikasi')">♧</button>
+      <div class="avatar">N</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="repo-heading">
+      <div class="repo-title">
+        <div class="repo-icon">▣</div>
+        <h1>belajar-dom</h1>
+        <span class="public-badge">Public</span>
+      </div>
+
+      <div class="repo-actions">
+        <button onclick="showMessage('Notifikasi repository')">◉ Watch <span>1</span></button>
+        <button onclick="showMessage('Repository ditandai Star')">☆ Star <span>0</span></button>
+        <button onclick="showMessage('Menu Fork')">⑂ Fork <span>0</span></button>
+      </div>
+    </div>
+
+    <nav class="repo-tabs">
+      <button class="tab active" onclick="showPage('code', this)">▤ Code</button>
+      <button class="tab" onclick="showPage('issues', this)">◉ Issues <span>0</span></button>
+      <button class="tab" onclick="showPage('pulls', this)">⑂ Pull requests <span>0</span></button>
+      <button class="tab" onclick="showPage('actions', this)">▷ Actions</button>
+      <button class="tab" onclick="showPage('projects', this)">▦ Projects</button>
+    </nav>
+
+    <section id="page-code" class="page active-page">
+      <div class="repo-toolbar">
+        <div class="branch-button">
+          <button onclick="showMessage('Branch: main')">⑂ main ⌄</button>
+          <button onclick="showMessage('Daftar branch')">▧ 1 branch</button>
+          <button onclick="showMessage('Daftar tag')">◇ 0 tags</button>
+        </div>
+
+        <div class="file-actions">
+          <input id="file-search" type="text" placeholder="Go to file" oninput="filterFiles()">
+          <button onclick="showMessage('Menu Add file')">＋ Add file</button>
+          <button class="code-button" onclick="showMessage('Menu Code: clone atau download')">Code ⌄</button>
+        </div>
+      </div>
+
+      <div class="repo-layout">
+        <div class="main-column">
+          <div class="latest-commit">
+            <div class="avatar small-avatar">N</div>
+            <strong>Najlala</strong>
+            <span>belajar dasar pemrograman DOM</span>
+            <span class="commit-time">• commit terakhir</span>
+            <button onclick="showMessage('Riwayat commit')">…</button>
+          </div>
+
+          <div class="file-table">
+            <div class="file-row file-header">
+              <span>Nama</span>
+              <span>Pesan commit terakhir</span>
+              <span>Waktu</span>
+            </div>
+
+            <button class="file-row file-item" data-name="assets" onclick="openFile('assets')">
+              <span class="file-name"><span class="file-icon">📁</span> assets</span>
+              <span class="file-message">Menambahkan folder assets</span>
+              <span class="file-time">terakhir</span>
+            </button>
+
+            <button class="file-row file-item" data-name="index.html" onclick="openFile('index.html')">
+              <span class="file-name"><span class="file-icon">📄</span> index.html</span>
+              <span class="file-message">Membuat halaman utama</span>
+              <span class="file-time">terakhir</span>
+            </button>
+
+            <button class="file-row file-item" data-name="style.css" onclick="openFile('style.css')">
+              <span class="file-name"><span class="file-icon">🎨</span> style.css</span>
+              <span class="file-message">Menambahkan tampilan CSS</span>
+              <span class="file-time">terakhir</span>
+            </button>
+
+            <button class="file-row file-item" data-name="script.js" onclick="openFile('script.js')">
+              <span class="file-name"><span class="file-icon">📜</span> script.js</span>
+              <span class="file-message">Menambahkan JavaScript</span>
+              <span class="file-time">terakhir</span>
+            </button>
+
+            <button class="file-row file-item" data-name="README.md" onclick="openFile('README.md')">
+              <span class="file-name"><span class="file-icon">📘</span> README.md</span>
+              <span class="file-message">Menambahkan dokumentasi</span>
+              <span class="file-time">terakhir</span>
+            </button>
+          </div>
+
+          <section class="readme">
+            <div class="readme-header">▤ README.md</div>
+            <div class="readme-content" id="file-content">
+              <h2>Belajar Dasar Pemrograman DOM</h2>
+              <p>Repository ini dibuat oleh Najlala untuk belajar dasar pemrograman DOM menggunakan HTML, CSS, dan JavaScript.</p>
+              <hr>
+
+              <h3>📚 Materi</h3>
+              <ul>
+                <li>Mengenal Document Object Model (DOM)</li>
+                <li>Mengakses elemen HTML dengan JavaScript</li>
+                <li>Mengubah isi dan tampilan elemen</li>
+                <li>Menggunakan event klik</li>
+              </ul>
+
+              <h3>🛠️ Teknologi</h3>
+              <p>HTML · CSS · JavaScript</p>
+            </div>
+          </section>
+        </div>
+
+        <aside class="sidebar">
+          <h3>About</h3>
+          <p>Repository latihan dasar pemrograman DOM milik Najlala.</p>
+          <a href="#" onclick="showMessage('Website proyek'); return false;">🔗 Website proyek</a>
+
+          <div class="sidebar-line"></div>
+          <p>▤ Readme</p>
+          <p>◇ Activity</p>
+
+          <div class="sidebar-line"></div>
+          <h3>Releases</h3>
+          <p class="muted">No releases published</p>
+          <a href="#" onclick="showMessage('Buat release'); return false;">Create a new release</a>
+
+          <div class="sidebar-line"></div>
+          <h3>Packages</h3>
+          <p class="muted">No packages published</p>
+
+          <div class="sidebar-line"></div>
+          <h3>Languages</h3>
+          <div class="language-bar">
+            <span></span><span></span><span></span>
+          </div>
+          <p class="language-text">HTML · CSS · JavaScript</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="page-issues" class="page empty-page">
+      <h2>Issues</h2>
+      <p>Belum ada issue di repository ini.</p>
+      <button onclick="showMessage('Membuat issue baru')">New issue</button>
+    </section>
+
+    <section id="page-pulls" class="page empty-page">
+      <h2>Pull requests</h2>
+      <p>Belum ada pull request.</p>
+      <button onclick="showMessage('Membuat pull request')">New pull request</button>
+    </section>
+
+    <section id="page-actions" class="page empty-page">
+      <h2>Actions</h2>
+      <p>Automate your workflow with GitHub Actions.</p>
+      <button onclick="showMessage('Contoh workflow Actions')">Set up a workflow</button>
+    </section>
+
+    <section id="page-projects" class="page empty-page">
+      <h2>Projects</h2>
+      <p>Belum ada project yang dibuat.</p>
+      <button onclick="showMessage('Membuat project')">New project</button>
+    </section>
+
+    <div id="message-box" class="message-box"></div>
+
+    <footer>
+      <span>© 2026 GitHub, Inc.</span>
+      <a href="#" onclick="showMessage('Terms'); return false;">Terms</a>
+      <a href="#" onclick="showMessage('Privacy'); return false;">Privacy</a>
+      <a href="#" onclick="showMessage('Docs'); return false;">Docs</a>
+      <span>GitHub-style practice page</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
